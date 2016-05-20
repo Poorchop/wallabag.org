@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>release - a self hostable application for saving web pages</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.wallabag.org/images/favicon.ico" rel="icon">
+
+
+    <meta name="author" content="Nicolas Lœuillet" />
+    <meta name="keywords" content="release" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="a self hostable application for saving web pages" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="a self hostable application for saving web pages"/>
+        <meta property="og:url" content="https://www.wallabag.org"/>
+        <meta property="og:description" content="a self hostable application for saving web pages"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.wallabag.org/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="https://www.wallabag.org/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.wallabag.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.wallabag.org/theme/css/style.css" type="text/css"/>
+        <link href="https://www.wallabag.org/extra/css/custom.css" rel="stylesheet">
+
+        <link href="https://www.wallabag.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="a self hostable application for saving web pages ATOM Feed"/>
+
+</head>
+<body>
+  <div class="gitter-chat-embed" style="display:none; "></div>
+  <script>
+      ((window.gitter = {}).chat = {}).options = {
+          room: 'wallabag/wallabag',
+          showChatByDefault: false
+      };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/" title="Homepage"><i class="fa fa-home"></i></a></li>
+                         <li><a href="https://www.wallabag.org/pages/features-screenshots.html">
+                             Features
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/download-wallabag.html">
+                             Downloads
+                          </a></li>
+                         <li><a href="https://github.com/wallabag/wallabag/milestones">
+                             Roadmap
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/releases.html">
+                             Releases
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/donations.html">
+                             Help us
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/participate.html">
+                             Participate!
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/support.html">
+                             Support
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://www.wallabag.org/blog_index.html"><i class="fa fa-th-list"></i><span class="icon-label">Blog</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2016/03/12/wallabag-public-beta2">wallabag 2.0.0-beta.2</a></h2>
+                <div class="summary"><h2>wallabag v2.0.0-beta.2</h2>
+<p>If you missed our recent blog posts, here are the main features of wallabag v2:</p>
+<ul>
+<li>a REST API (<a href="http://v2.wallabag.org/api/doc">you can have a look to the documentation</a>)</li>
+<li>authorization via oAuth2</li>
+<li>a new default theme, called <code>material</code></li>
+<li>save an article, read it, favorite it, archive it. (Hopefully)</li>
+<li>annotations: In each article you read, you can write annotations. (<a href="http://doc.wallabag.org/en/master/user/annotations.html">read the doc</a>)</li>
+<li>assign tags to entries</li>
+<li>edit article titles</li>
+<li>RSS feeds (with ability to limit number of articles)</li>
+<li>create a new account from the config page</li>
+<li>filter entries by reading time, domain name, creation date, status, etc.</li>
+<li>recover passwords from login page (you have to fill your email on config page)</li>
+<li>picture preview, if available, is displayed for each entry</li>
+<li>Public registration</li>
+<li>migration from wallabag v1/v2 (based on JSON export) (<a href="http://doc.wallabag.org/en/master/user/import.html">read the doc</a>)</li>
+<li>migration from Pocket (it works, but we need to implement asynchronous import: if you have too many articles, it can fail) (<a href="http://doc.wallabag.org/en/master/user/import.html">read the doc</a>)</li>
+<li>exports in many formats (PDF, JSON, EPUB, MOBI, XML, CSV and TXT).</li>
+<li>2-Factor authentication via email (<a href="http://doc.wallabag.org/en/master/user/configuration.html#two-factor-authentication">read the doc</a>)</li>
+<li>Tagging rule: create a rule to automatically assign tags to entries! (<a href="http://doc.wallabag.org/en/master/user/configuration.html#tagging-rules">read the doc</a>)</li>
+<li>German, French, Turkish, Persian, Romanian, Polish, Danish, Spanish and English translations</li>
+<li>Added Quickstart for beginners (when you don't have any entries)</li>
+<li>maintenance mode (useful when you'll upgrade your wallabag platform)</li>
+<li>Internal settings for administrator (the account created during installation). We need to documentate this part of wallabag.</li>
+<li>For 3rd apps developers, a developer page is available to create API token</li>
+</ul>
+<p>We have work to do on our API, <a href="https://github.com/wallabag/wallabag/pull/1675">you can have a look on this pull request</a>.</p>
+<h3>What's new since last beta?</h3>
+<ul>
+<li>change the way to install wallabag via composer (<code>composer install</code> instead of <code>composer create-project</code> to make updates easier)</li>
+<li>API: For 3rd apps developers, we added a developer page to create API token</li>
+<li>API: added more properties (starred and archived) on entries (<a href="https://github.com/wallabag/wallabag/issues/1634">#1634</a>)</li>
+<li>API: you can now have the wallabag version via the <code>/api/version</code> endpoint</li>
+<li>when you import articles from 3rd services (like Pocket), you can mark all the entries as read</li>
+<li>We added <code>wallabag</code> in our page title, to avoid confusion via the original article <a href="https://github.com/wallabag/wallabag/issues/1756">#1756</a></li>
+<li>Fixed Docker timezone <a href="https://github.com/wallabag/wallabag/issues/1726">#1726</a></li>
+<li>spanish translation</li>
+<li>documentation about filters <a href="http://doc.wallabag.org/en/master/user/filters.html">http://doc.wallabag.org/en/master/user/filters.html</a></li>
+</ul>
+<p>We didn't write database migrations for this beta, but this feature is planned for next versions.<br />
+If you want to upgrade your previous installation, please run this command <code>bin/console doctrine:schema:update --force</code>.</p>
+<p>You can see the full changelog here: <a href="https://github.com/wallabag/wallabag/compare/2.0.0-beta.1...2.0.0-beta.2">https://github.com/wallabag/wallabag/compare/2.0.0-beta.1...2.0.0-beta.2</a>.</p>
+<h3>Documentation</h3>
+<p>v2 documentation is already available (we still need to write some chapters), you can read it here: http://doc.wallabag.org</p>
+<p>Our documentation is now hosted on <a href="http://readthedocs.org/">ReadTheDocs</a>.</p>
+<h3>Translate wallabag and documentation</h3>
+<p>Please read this page: <a href="http://doc.wallabag.org/en/master/developer/translate.html">http://doc.wallabag.org/en/master/developer/translate.html</a>.</p>
+<h3>Third-party applications</h3>
+<p>Our applications (Firefox / Chrome addons and Android / iOS / Windows Phone) are not available for wallabag v2 but we'll work on them to change that.</p>
+<h2>Test wallabag</h2>
+<p>Keep in mind it's a <strong>beta</strong> branch, don't use it in production.</p>
+<h3>On a dedicated web server</h3>
+<p>If you don't have it yet, please <a href="https://getcomposer.org/download/">install composer</a>. Then you can install wallabag by executing the following commands:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/wallabag/wallabag.git
+cd wallabag
+git checkout 2.0.0-beta.2
+SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+php bin/console wallabag:install --env=prod
+php bin/console server:run --env=prod
+</pre></div>
+
+
+<h3>On a shared hosting</h3>
+<p>We provide you a package, <a href="http://wllbg.org/latest-v2-package"><code>wallabag-2.0.0-beta.2.tar.gz</code></a>, with all dependancies inside.</p>
+<p>The default configuration uses SQLite for the database. If you want to change these settings, please edit <code>app/config/parameters.yml</code>.</p>
+<p><strong>Warning:</strong> With this package, wallabag don't check mandatory extensions used in the application (theses checks are made during <code>composer create-project</code> when you have a dedicated web server, see above).<br />
+<strong><a href="http://doc.wallabag.org/en/master/user/installation.html">Please read our installation documentation to see requirements</a></strong>.</p>
+<ul>
+<li>Download this file here: <a href="http://wllbg.org/latest-v2-package">http://wllbg.org/latest-v2-package</a></li>
+<li>Extract it (<code>tar xvf wallabag-2.0.0-beta.2.tar.gz</code>)</li>
+<li>In your wallabag folder, run <code>php bin/console wallabag:install --env=prod</code></li>
+<li>Run <code>php bin/console server:run --env=prod</code></li>
+</ul>
+<h3>On our demo platform</h3>
+<p>We published this version on <a href="http://v2.wallabag.org">http://v2.wallabag.org</a> but please remind it's just a demo platform and we can drop database at any time.</p>
+<p>You can create a free account on this platform.</p>
+<h3>Need help?</h3>
+<p><a href="https://gitter.im/wallabag/wallabag">We are on Gitter</a> (a chat platform), ping us! You can also open a <a href="https://github.com/wallabag/wallabag/issues/new">new issue on GitHub</a>.</p>
+<h2>How can you help us?</h2>
+<p>Test, test and test! Install wallabag v2 (see above <code>On a dedicated web server</code> chapter) and tell us if you have any problems.</p>
+<p>Don't forget that <a href="https://www.wallabag.org/pages/donations.html">you can also support us via Paypal, Flattr, Gratipay or Bountysource</a>.</p>
+<h2>What's next?</h2>
+<p>We planned to released stable version on 3rd April. In one month. We have lot of work to release this version (<a href="https://github.com/wallabag/wallabag/milestones/2.0.0">see here our todo list</a>). Maybe we'll release other betas before this deadline (the next version will probably be a Release Candidate, it depends on the quantity of bugs you'll find!).</p>
+<p>We need help, feel free to contribute to this great project!</p>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2016/03/01/wallabag-public-beta1">First public beta for wallabag v2</a></h2>
+                <div class="summary"><p>Last week, <a href="{filename}/20160220-roadmap-wallabag-v2.md">we published our roadmap</a> for this year:</p>
+<ul>
+<li>wallabag v2.0.0-beta.1 on 1st March</li>
+<li>wallabag v2.0.0 on 3rd April</li>
+<li>wallabag v2.1.0 on 3rd July</li>
+<li>wallabag v2.2.0 on 3rd October</li>
+</ul>
+<p>And do you know what? <strong>We are on 1st March</strong>. So, it's the <strong>beta day</strong>!</p>
+<h2>wallabag v2.0.0-beta.1</h2>
+<p>If you missed our recent blog posts, here are the main features of wallabag v2:</p>
+<ul>
+<li>a REST API (<a href="http://v2.wallabag.org/api/doc">you can have a look to the documentation</a>)</li>
+<li>authorization via oAuth2</li>
+<li>a new default theme, called <code>material</code></li>
+<li>save an article, read it, favorite it, archive it. (Hopefully)</li>
+<li>annotations: In each article you read, you can write annotations. (<a href="http://doc.wallabag.org/en/master/user/annotations.html">read the doc</a>)</li>
+<li>assign tags to entries</li>
+<li>edit article titles</li>
+<li>RSS feeds (with ability to limit number of articles)</li>
+<li>create a new account from the config page</li>
+<li>filter entries by reading time, domain name, creation date, status, etc.</li>
+<li>recover passwords from login page (you have to fill your email on config page)</li>
+<li>picture preview, if available, is displayed for each entry</li>
+<li>Public registration</li>
+<li>migration from wallabag v1/v2 (based on JSON export) (<a href="http://doc.wallabag.org/en/master/user/import.html">read the doc</a>)</li>
+<li>migration from Pocket (it works, but we need to implement asynchronous import: if you have too many articles, it can fail) (<a href="http://doc.wallabag.org/en/master/user/import.html">read the doc</a>)</li>
+<li>exports in many formats (PDF, JSON, EPUB, MOBI, XML, CSV and TXT).</li>
+<li>2-Factor authentication via email (<a href="http://doc.wallabag.org/en/master/user/configuration.html#two-factor-authentication">read the doc</a>)</li>
+<li>Tagging rule: create a rule to automatically assign tags to entries! (<a href="http://doc.wallabag.org/en/master/user/configuration.html#tagging-rules">read the doc</a>)</li>
+<li>German, French, Turkish, Persian, Romanian, Polish, Danish and English translations</li>
+<li>Added Quickstart for beginners (when you don't have any entries)</li>
+<li>maintenance mode (useful when you'll upgrade your wallabag platform)</li>
+<li>Internal settings for administrator (the account created during installation). We need to documentate this part of wallabag.</li>
+</ul>
+<p>We have work to do on our API, <a href="https://github.com/wallabag/wallabag/pull/1675">you can have a look on this pull request</a>.</p>
+<h3>What's new since last alpha?</h3>
+<ul>
+<li>The big feature is the annotations. <a href="https://github.com/tcitworld">Thank you Thomas</a>!</li>
+<li>We worked on installation: it's now easier (we removed many parameters to configure during this step) and we check more requirements to facilitate this installation</li>
+<li>Internal settings for administrator</li>
+<li>Maintenance mode</li>
+<li>Turkish, Persian, Romanian, Polish, and Danish translations (thank you to translators)</li>
+<li>Piwik integration</li>
+</ul>
+<p>We didn't write database migrations for this first beta, but this feature is planned for next versions.<br />
+If you want to upgrade your previous installation, please run this command <code>bin/console doctrine:schema:update --force</code>.</p>
+<p>You can see the full changelog here: <a href="https://github.com/wallabag/wallabag/compare/2.0.0-alpha.2...2.0.0-beta.1">https://github.com/wallabag/wallabag/compare/2.0.0-alpha.2...2.0.0-beta.1</a>.</p>
+<h3>Documentation</h3>
+<p>v2 documentation is already available (we still need to write some chapters), you can read it here: http://doc.wallabag.org</p>
+<p>Our documentation is now hosted on <a href="http://readthedocs.org/">ReadTheDocs</a>.</p>
+<h3>Translate wallabag and documentation</h3>
+<p>Please read this page: <a href="http://doc.wallabag.org/en/master/developer/translate.html">http://doc.wallabag.org/en/master/developer/translate.html</a>.</p>
+<h3>Third-party applications</h3>
+<p>Our applications (Firefox / Chrome addons and Android / iOS / Windows Phone) are not available for wallabag v2 but we'll work on them to change that.</p>
+<h2>Test wallabag</h2>
+<p>Keep in mind it's a <strong>beta</strong> branch, don't use it in production.</p>
+<h3>On a dedicated web server</h3>
+<p>If you don't have it yet, please <a href="https://getcomposer.org/download/">install composer</a>. Then you can install wallabag by executing the following commands:</p>
+<div class="highlight"><pre><span></span>SYMFONY_ENV=prod composer create-project wallabag/wallabag wallabag &quot;2.0.0-beta.1&quot; --no-dev
+php bin/console wallabag:install --env=prod
+php bin/console server:run --env=prod
+</pre></div>
+
+
+<h3>On a shared hosting</h3>
+<p>We provide you a package, <code>wallabag-2.0.0-beta.1.tar.gz</code>, with all dependancies inside.</p>
+<p>The default configuration uses SQLite for the database. If you want to change these settings, please edit <code>app/config/parameters.yml</code>.</p>
+<p><strong>Warning:</strong> With this package, wallabag don't check mandatory extensions used in the application (theses checks are made during <code>composer create-project</code> when you have a dedicated web server, see above).<br />
+<strong><a href="http://doc.wallabag.org/en/master/user/installation.html">Please read our installation documentation to see requirements</a></strong>.</p>
+<ul>
+<li>Download this file here: <a href="http://wllbg.org/latest-v2-package">http://wllbg.org/latest-v2-package</a></li>
+<li>Extract it (<code>tar xvf wallabag-2.0.0-beta.1.tar.gz</code>)</li>
+<li>In your wallabag folder, run <code>php bin/console wallabag:install --env=prod</code></li>
+<li>Run <code>php bin/console server:run --env=prod</code></li>
+</ul>
+<h3>On our demo platform</h3>
+<p>We published this version on <a href="http://v2.wallabag.org">http://v2.wallabag.org</a> but please remind it's just a demo platform and we can drop database at any time.</p>
+<p>You can create a free account on this platform.</p>
+<h3>Need help?</h3>
+<p><a href="https://gitter.im/wallabag/wallabag">We are on Gitter</a> (a chat platform), ping us! You can also open a <a href="https://github.com/wallabag/wallabag/issues/new">new issue on GitHub</a>.</p>
+<h2>How can you help us?</h2>
+<p>Test, test and test! Install wallabag v2 (see above <code>On a dedicated web server</code> chapter) and tell us if you have any problems.</p>
+<p>Don't forget that <a href="https://www.wallabag.org/pages/donations.html">you can also support us via Paypal, Flattr, Gratipay or Bountysource</a>.</p>
+<h2>What's next?</h2>
+<p>We planned to released stable version on 3rd April. In one month. We have lot of work to release this version (<a href="https://github.com/wallabag/wallabag/milestones/2.0.0">see here our todo list</a>). Maybe we'll release other betas before this deadline (the next version will probably be a Release Candidate, it depends on the quantity of bugs you'll find!).</p>
+<p>We need help, feel free to contribute to this great project!</p>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2016/01/22/wallabag-alpha2-v2">wallabag 2.0.0-alpha.2 available</a></h2>
+                <div class="summary"><p>Since our last release (<a href="https://www.wallabag.org/blog/2016/01/08/wallabag-alpha1-v2">alpha.1</a>), we fixed some bugs and add nice features.  </p>
+<h2>wallabag 2.0.0-alpha.2</h2>
+<p>User changelog:</p>
+<ul>
+<li>Added Quickstart for beginners (when you don't have any entries)</li>
+<li>Added import link on Baggy theme</li>
+<li>Fixed Mark as read / Mark as unread links</li>
+<li>Fixed "Tags are not deleted when you delete an entry" #1453</li>
+<li>Added HTML emails</li>
+<li>some fixed and cleanups</li>
+</ul>
+<p>Technical changelog:</p>
+<ul>
+<li>Added Doctrine migrations</li>
+<li>Added Docker configuration</li>
+<li>Upgraded wallabag to Symfony3</li>
+</ul>
+<p>Already implemented:</p>
+<ul>
+<li>a REST API (<a href="http://v2.wallabag.org/api/doc">you can have a look to the documentation</a>)</li>
+<li>authorization via oAuth2</li>
+<li>a new default theme, called <code>material</code></li>
+<li>save an article, read it, favorite it, archive it. (Hopefully)</li>
+<li>assign tags to entries</li>
+<li>edit article titles</li>
+<li>RSS feeds (with ability to limit number of articles)</li>
+<li>create a new account from the config page</li>
+<li>filter entries by reading time, domain name, creation date, status, etc.</li>
+<li>recover passwords from login page (you have to fill your email on config page)</li>
+<li>picture preview, if available, is displayed for each entry</li>
+<li>Public registration</li>
+<li>migration from wallabag v1 (based on JSON export)</li>
+<li>migration from Pocket (it works, but we need to implement asynchronous import: if you have too many articles, it can fail). Documentation still in progress (you'll have a great documentation in next days)</li>
+<li>exports in many formats (PDF, JSON, EPUB, MOBI, XML, CSV).</li>
+<li>2-Factor authentication (via email)</li>
+<li>Tagging rule: create a rule to automatically assign tags to entries!</li>
+<li>German / French and English translations</li>
+</ul>
+<h2>Testing wallabag 2.0.0-alpha.2</h2>
+<p>We encourage you to try out the new wallabag v2 alpha on our demo website: <a href="http://v2.wallabag.org">http://v2.wallabag.org</a> (login wallabag, password wallabag). You can also create a new account on this website, but don't remember that we can drop our database at any time: <strong>this website is not a production one!</strong></p>
+<p>There are definitely bugs, so please tell us if you find one of them (have a look <a href="https://github.com/wallabag/wallabag/issues">at the existing issues</a> and <a href="https://github.com/wallabag/wallabag/issues/new">create a new one</a> if necessary).</p>
+<h2>Installing wallabag 2.0.0-alpha.2</h2>
+<p>Please don't use in production! This is an <strong>unstable</strong> branch, expect many things to be broken.</p>
+<p>wallabag v2 uses <a href="http://symfony.com">Symfony2 framework</a>.</p>
+<p>The only way to install wallabag v2 properly at the moment is to use composer (if you don't have it yet, <a href="https://getcomposer.org/download/">please install it</a>.). To download wallabag, <a href="{filename}pages/download.md">you can click here</a> or clone the project via git:</p>
+<div class="highlight"><pre><span></span>composer create-project wallabag/wallabag wallabag 2.0.*@alpha
+php bin/console wallabag:install
+php bin/console server:run
+</pre></div>
+
+
+<p>Have a nice day!</p>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2016/01/08/wallabag-alpha1-v2">wallabag 2.0.0-alpha.1 available</a></h2>
+                <div class="summary"><p>We released our first alpha 4 months ago, and we were on late to release this new one. Sorry for that (but we worked very hard to give you new great features).</p>
+<h2>wallabag 2.0.0-alpha.1</h2>
+<p>Features list:</p>
+<ul>
+<li>Public registration</li>
+<li>migration from wallabag v1 (based on JSON export)</li>
+<li>migration from Pocket (it works, but we need to implement asynchronous import: if you have too many articles, it can fail). Documentation still in progress (you'll have a great documentation in next days)</li>
+<li>exports in many formats (PDF, JSON, EPUB, MOBI, XML, CSV).</li>
+<li>2-Factor authentication (via email)</li>
+<li>Tagging rule: create a rule to automatically assign tags to entries!</li>
+<li>German / French and English translations</li>
+<li>some minor fixes</li>
+</ul>
+<p>Already implemented:</p>
+<ul>
+<li>a REST API (<a href="http://v2.wallabag.org/api/doc">you can have a look to the documentation</a>)</li>
+<li>authorization via oAuth2</li>
+<li>a new default theme, called <code>material</code></li>
+<li>save an article, read it, favorite it, archive it. (Hopefully)</li>
+<li>assign tags to entries</li>
+<li>edit article titles</li>
+<li>RSS feeds (with ability to limit number of articles)</li>
+<li>create a new account from the config page</li>
+<li>filter entries by reading time, domain name, creation date, status, etc.</li>
+<li>recover passwords from login page (you have to fill your email on config page)</li>
+<li>picture preview, if available, is displayed for each entry</li>
+<li>...</li>
+</ul>
+<h2>Testing wallabag 2.0.0-alpha.1</h2>
+<p>We encourage you to try out the new wallabag v2 alpha on our demo website: <a href="http://v2.wallabag.org">http://v2.wallabag.org</a> (login wallabag, password wallabag). You can also create a new account on this website, but don't remember that we can drop our database at any time: <strong>this website is not a production one!</strong></p>
+<p>There are definitely bugs, so please tell us if you find one of them (have a look <a href="https://github.com/wallabag/wallabag/issues">at the existing issues</a> and <a href="https://github.com/wallabag/wallabag/issues/new">create a new one</a> if necessary).</p>
+<h2>Installing wallabag 2.0.0-alpha.1</h2>
+<p>Please don't use in production! This is an <strong>unstable</strong> branch, expect many things to be broken.</p>
+<p>wallabag v2 uses <a href="http://symfony.com">Symfony2 framework</a>.</p>
+<p>The only way to install wallabag v2 properly at the moment is to use Composer. To download wallabag, <a href="{filename}pages/download.md">you can click here</a> or clone the project via git:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/wallabag/wallabag.git -b v2
+cd wallabag
+composer install
+php app/console wallabag:install
+php app/console server:run
+</pre></div>
+
+
+<h2>What's next?</h2>
+<p>We can say that next step will be the first beta of wallabag v2. When? In 2016 :-) !</p>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2015/09/14/wallabag-v2-alpha-finally">wallabag 2.0.0-alpha, finally</a></h2>
+                <div class="summary"><p><strong>wallabag is an open source read-it-later application</strong>.</p>
+<p>We started developing wallabag in 2013 using PHP classes but quickly ran into many limitations: no API, database fields missing, etc.). So, we decided to re-write it from scratch, this time using a framework. After many stalled attempts, we're proud to say that v2 is almost here!</p>
+<p>In 2014, Jérémy Benoist (<a href="https://github.com/j0k3r">aka @j0k3r</a>) joined us. He is an awesome Symfony lead developer! With his help, we were finally able to ramp up production on a new and improved rebuild of wallabag.</p>
+<p>While we're not quite finished integrating all of the features from from wallabag v1, we felt it was time to release our first alpha of wallabag v2 into the wild so we could start to gather some feedback.</p>
+<p>This is a big step in wallabag's development and we're all very proud of what we've accomplished so far.</p>
+<h2>wallabag 2.0.0-alpha</h2>
+<p>Feature List:</p>
+<ul>
+<li>a REST API (<a href="http://v2.wallabag.org/api/doc">you can have a look to the documentation</a>)</li>
+<li>authorization via oAuth2</li>
+<li>a new default theme, called <code>material</code></li>
+<li>save an article, read it, favorite it, archive it. (Hopefully)</li>
+<li>assign tags to entries</li>
+<li>edit article titles</li>
+<li>RSS feeds (with ability to limit number of articles)</li>
+<li>create a new account from the config page</li>
+<li>filter entries by reading time, domain name, creation date, status, etc.</li>
+<li>recover passwords from login page (you have to fill your email on config page)</li>
+<li>picture preview, if available, is displayed for each entry</li>
+<li>...</li>
+</ul>
+<h2>Testing wallabag 2.0.0-alpha</h2>
+<p>We encourage you to try out the new wallabag v2 alpha on our demo website: <a href="http://v2.wallabag.org">http://v2.wallabag.org</a> (login wallabag, password wallabag)</p>
+<p>There are definitely bugs, so please tell us if you find one of them (have a look <a href="https://github.com/wallabag/wallabag/issues">at the existing issues</a> and <a href="https://github.com/wallabag/wallabag/issues/new">create a new one</a> if necessary).</p>
+<h2>Installing wallabag 2.0.0-alpha</h2>
+<p>Please don't use in production! This is an <strong>unstable</strong> branch, expect many things to be broken.</p>
+<p>wallabag v2 uses <a href="http://symfony.com">Symfony2 framework</a>.</p>
+<p>The only way to install wallabag v2 properly at the moment is to use Composer. To download wallabag, <a href="{filename}pages/download.md">you can click here</a> or clone the project via git:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/wallabag/wallabag.git -b v2
+cd wallabag
+composer install
+php app/console wallabag:install
+php app/console server:run
+</pre></div>
+
+
+<h2>The road is still long</h2>
+<p>We still have a lot of work ahead of us, but this alpha release is a big step in our roadmap. We still don't have a final release date, so don't ask us ;-)</p>
+<p>You're still here? Go ahead and test wallabag v2!</p>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.wallabag.org/blog/2015/08/03/wallabag-v1.9.1-released">wallabag v1.9.1 released, last version before v2!</a></h2>
+                <div class="summary"><p>We are happy to announce you the release of wallabag v1.9.1. Unlike what it seems, it's quite an important version (it's just between 1.9 and 2.0). A whole number of bugs have been corrected, some translations added, many config websites files added, and there's also a handful of new features we hope you'll like.</p>
+<h2>Download</h2>
+<p>wallabag 1.9.1 is <a href="https://www.wallabag.org/pages/download-wallabag.html">available on our website</a>.</p>
+<h2>Features</h2>
+<ul>
+<li>Buttons to go to next and previous article when you view an article.</li>
+<li>Button to mark article as read and go to next unread article.</li>
+<li>Keyboard shortcuts. Lots of them. And vim-style navigation (see below).</li>
+<li>Gestures on touch screens. Swipe to left or right to navigate to next or previous articles.</li>
+<li>Toolbar also at the bottom of the article with baggy theme, you don't have to scroll back any more when finished !</li>
+<li>While you tag an article, you now see all the existing tags. Just click on them to add it to this article. And the more used are shown bigger.</li>
+<li>Mozilla Sharing Service ! You will need https to activate it, but it's worth the try, you can get rid of the old extension and use the build-in sharing from Firefox.</li>
+<li>Import <em>Netscape-formated-bookmarks</em>. This allows import of Firefox, Internet Explorer (I know, right !), Chrome browsers bookmarks. And certainly many other tools and applications.</li>
+<li>If you're using a reverse proxy, you might interested by the BASE_URL constant.</li>
+</ul>
+<h3>Shortcuts</h3>
+<h4>Article view</h4>
+<ul>
+<li>Navigate between articles: arrows or vim style (<code>h</code> for left, <code>l</code> for right)</li>
+<li><code>d</code> or <code>del</code> to delete article</li>
+<li><code>f</code> to toggle favorite status</li>
+<li><code>m</code> to toggle mark as read status</li>
+<li><code>n</code> to mark as read and redirect to the next article</li>
+</ul>
+<h4>Unread / Favorite / Archive view</h4>
+<ul>
+<li>with arrows, you can navigate into articles (vim style is also available with <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>) and press Enter to read the article!</li>
+</ul>
+<h2>Session issues</h2>
+<p>It's no secret that we've had kind of a hard deal to fix sessions issues. You always ended up disconnected after a while. The thing is, just a little configuration should get rid of this issues. <a href="http://doc.wallabag.org/en/Administrator/sessions.html">Checkout the documentation there</a>.</p>
+<p>This bug is already fixed on Framabag.org.</p>
+<h2>Application for Firefox OS</h2>
+<p>We <strong>now</strong> have our Firefox OS application! Thank you so much <a href="https://github.com/freddyb">@freddyb</a> !</p>
+<p><a href="https://github.com/wallabag/wallabag-fxos">Download this app here.</a></p>
+<h2>wallabag v2</h2>
+<p>This is the end of wallabag <a href="https://www.youtube.com/watch?v=Z0GFRcFm-aY">as we know it</a>. ~~We launch our premium version~~ We get rid of the old code. We've rebuild wallabag using Symfony2 and it's now much better to work efficiently with clean code.</p>
+<p>We will release a first alpha release of wallabag 2.0 in september 2015. You can follow latest news on <a href="https://twitter.com/wallabagapp">twitter</a>, <a href="https://gitter.im/wallabag/wallabag#initial">gitter</a> or <a href="https://framasphere.org/u/wallabag">diaspora*</a>.</p>
+<h2>Events</h2>
+<p>Nicolas was at RMLL 2015 (Libre Software Meeting) to talk about wallabag. <a href="fr.slideshare.net/nicosomb/effectuez-votre-veille-en-toute-liberte-rmll-2015-beauvais">Slides in french are there</a>, <a href="http://videos-cdn.rmll.info/videos2015/ubicast/amphi-bunuel-effectuez-votre-veille-en-t_2891/">video in french there</a>.</p>
+<p>Nicolas will may be at <a href="http://www.opensourcesummit.paris/">Paris Open Source Summit</a> and <a href="https://2015.capitoledulibre.org/">Le Capitole du Libre</a> in november.</p>
+<h2>Need help!</h2>
+<p>Our project is bigger and bigger, and we always need some help. We <a href="https://github.com/wallabag/wallabag/issues/1254">opened a new ticket on github</a> where we are listing all our needs. Pick one of them and welcome on board!</p>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pager">
+                <li class="previous"><a href="https://www.wallabag.org/tag/release.html">&larr; Newer</a></li>
+                <li class="next"><a
+                        href="https://www.wallabag.org/tag/release3.html">Older &rarr;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-pencil fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/05/07/wallabag-204">
+                            [Release] wallabag 2.0.4
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/04/22/wallabag-203">
+                            [Release] wallabag 2.0.3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/04/21/wallabag-202">
+                            [Release] wallabag 2.0.2
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        <li class="list-group-item"><h4><i class="fa fa-envelope fa-lg"></i><span class="icon-label">Follow us</span></h4>
+            <ul class="list-group" id="followus">
+                <li class="list-group-item">
+                    <i class="fa fa-github fa-lg"></i> <a href="https://github.com/wallabag/wallabag">GitHub</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-twitter fa-lg"></i> <a href="https://twitter.com/wallabagapp">Twitter</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-comment fa-lg"></i> <a href="https://framasphere.org/u/wallabag">diaspora*</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-facebook fa-lg"></i> <a href="https://facebook.com/wallabag">Facebook</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-google-plus fa-lg"></i> <a href="https://plus.google.com/+WallabagOrg">Google+</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-rss fa-lg"></i> <a href="https://www.wallabag.org/feeds/all.atom.xml">RSS</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+          <div class="col-xs-10">wallabag is made by <a href="http://www.loeuillet.org">Nicolas Lœuillet</a>, Thomas Citharel, Jérémy Benoist and many <a href="https://github.com/wallabag/wallabag/graphs/contributors">great contributors</a>.
+             <p><small>This website is powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> and  <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>. You can contribute to it on <a href="https://github.com/wallabag/wallabag.org">github.com/wallabag/wallabag.org</a>.</small></p>          </div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.wallabag.org/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.wallabag.org/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.wallabag.org/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

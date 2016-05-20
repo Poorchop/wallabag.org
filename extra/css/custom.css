@@ -1,0 +1,40 @@
+#banner {
+    padding: 85px 0;
+}
+
+#banner h1 {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#content h1.entry-title {
+	margin-bottom: 40px;
+	font-weight: 400;
+}
+
+.entry-content {
+  font-size: 18px;
+}
+
+.entry-content table {
+  width:100%;
+}
+
+.entry-content th, .entry-content td {
+  font-size: 15px;
+}
+
+.alert {
+    font-size: 16px;
+}
+
+#sidebar {
+	margin-top: 102px;
+}
+
+#sidebar h4 {
+	font-weight: 400;
+}
+
+.panel-default > .panel-heading {
+    background-color: transparent;
+}

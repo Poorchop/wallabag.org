@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Download wallabag - a self hostable application for saving web pages</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://www.wallabag.org/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="https://www.wallabag.org/pages/download-wallabag.html">
+
+        <meta name="author" content="Nicolas Lœuillet" />
+        <meta name="description" content="Last version: 2.0.4 (2016/05/07). Blog post about this version Need help about installation? Need to update from wallabag v1? Source code Installation on a dedicated web server (recommended way) If you don&#39;t have it yet, please install composer and git. Then you can install wallabag by executing the following commands: git clone https://github.com/wallabag/wallabag.git cd wallabag git checkout 2.0.4 SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist php bin/console wallabag:install --env=prod Read this documentation to create your virtual host. Upgrade In your wallabag folder, execute these commands: git fetch origin git fetch --tags git checkout 2.0.4 SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist php bin/console cache:clear --env=prod Installation via Docker You can find our official repository on Docker hub. Installation on a shared hosting We provide you a package with all dependancies inside. The default configuration uses SQLite for the database. If you want to change these settings, please edit app/config/parameters.yml. We already created a user: login and password are wallabag. With this package, wallabag don&#39;t check mandatory extensions used in the application (theses checks are made during composer install when you have a dedicated web server, see above). Please read our installation documentation to see requirements. Execute this command to download and extract the latest package: wget http://wllbg.org/latest-v2-package &amp;&amp; tar xvf latest-v2-package (md5 hash of the package: 26f79f80dfd8d8b30f3573b5251058ce) Now, read this documentation to create your virtual host, then access to your wallabag. If you changed the database configuration to use MySQL or PostgreSQL, you need to create a user via this command php bin/console wallabag:install --env=prod. Upgrade Backup your app/config/parameters.yml file. Extract the archive in your wallabag folder and replace app/config/parameters.yml with yours. If you use SQLite, you must also copy your data/ folder inside the new installation. Please empty var/cache folder. wallabag 1 Last version: 1.9.2 (2016/04/18). Blog post about this version Need help about installation? Source code wget http://wllbg.org/latest &amp;&amp; unzip latest (md5 hash of the package: c54ac594b03ce2026cf1f671391033e3) Third-party applications Firefox for wallabag v2 only Developed by Thibaud Dauce. source code Firefox for wallabag v1 only Developed by Jonathan Gaulupeau. source code Chrome Developed by Jonathan Gaulupeau. source code Firefox OS Developed by freddyb. source code Android Google Play Store or F-droid Developed by Jonathan Gaulupeau. source code Windows Phone for wallabag v2 only Developed by Julian Oster. source code Windows Phone for wallabag v1 only Developed by Julian Oster. source code iPhone Developed by Kevin Meyer. source code" />
+
+    <meta property="og:site_name" content="a self hostable application for saving web pages" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Download wallabag"/>
+    <meta property="og:url" content="https://www.wallabag.org/pages/download-wallabag.html"/>
+    <meta property="og:description" content="Last version: 2.0.4 (2016/05/07). Blog post about this version Need help about installation? Need to update from wallabag v1? Source code Installation on a dedicated web server (recommended way) If you don&#39;t have it yet, please install composer and git. Then you can install wallabag by executing the following commands: git clone https://github.com/wallabag/wallabag.git cd wallabag git checkout 2.0.4 SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist php bin/console wallabag:install --env=prod Read this documentation to create your virtual host. Upgrade In your wallabag folder, execute these commands: git fetch origin git fetch --tags git checkout 2.0.4 SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist php bin/console cache:clear --env=prod Installation via Docker You can find our official repository on Docker hub. Installation on a shared hosting We provide you a package with all dependancies inside. The default configuration uses SQLite for the database. If you want to change these settings, please edit app/config/parameters.yml. We already created a user: login and password are wallabag. With this package, wallabag don&#39;t check mandatory extensions used in the application (theses checks are made during composer install when you have a dedicated web server, see above). Please read our installation documentation to see requirements. Execute this command to download and extract the latest package: wget http://wllbg.org/latest-v2-package &amp;&amp; tar xvf latest-v2-package (md5 hash of the package: 26f79f80dfd8d8b30f3573b5251058ce) Now, read this documentation to create your virtual host, then access to your wallabag. If you changed the database configuration to use MySQL or PostgreSQL, you need to create a user via this command php bin/console wallabag:install --env=prod. Upgrade Backup your app/config/parameters.yml file. Extract the archive in your wallabag folder and replace app/config/parameters.yml with yours. If you use SQLite, you must also copy your data/ folder inside the new installation. Please empty var/cache folder. wallabag 1 Last version: 1.9.2 (2016/04/18). Blog post about this version Need help about installation? Source code wget http://wllbg.org/latest &amp;&amp; unzip latest (md5 hash of the package: c54ac594b03ce2026cf1f671391033e3) Third-party applications Firefox for wallabag v2 only Developed by Thibaud Dauce. source code Firefox for wallabag v1 only Developed by Jonathan Gaulupeau. source code Chrome Developed by Jonathan Gaulupeau. source code Firefox OS Developed by freddyb. source code Android Google Play Store or F-droid Developed by Jonathan Gaulupeau. source code Windows Phone for wallabag v2 only Developed by Julian Oster. source code Windows Phone for wallabag v1 only Developed by Julian Oster. source code iPhone Developed by Kevin Meyer. source code" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.wallabag.org/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="https://www.wallabag.org/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.wallabag.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.wallabag.org/theme/css/style.css" type="text/css"/>
+        <link href="https://www.wallabag.org/extra/css/custom.css" rel="stylesheet">
+
+        <link href="https://www.wallabag.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="a self hostable application for saving web pages ATOM Feed"/>
+
+</head>
+<body>
+  <div class="gitter-chat-embed" style="display:none; "></div>
+  <script>
+      ((window.gitter = {}).chat = {}).options = {
+          room: 'wallabag/wallabag',
+          showChatByDefault: false
+      };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/" title="Homepage"><i class="fa fa-home"></i></a></li>
+                         <li><a href="https://www.wallabag.org/pages/features-screenshots.html">
+                             Features
+                          </a></li>
+                         <li class="active"><a href="https://www.wallabag.org/pages/download-wallabag.html">
+                             Downloads
+                          </a></li>
+                         <li><a href="https://github.com/wallabag/wallabag/milestones">
+                             Roadmap
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/releases.html">
+                             Releases
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/donations.html">
+                             Help us
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/participate.html">
+                             Participate!
+                          </a></li>
+                         <li><a href="https://www.wallabag.org/pages/support.html">
+                             Support
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://www.wallabag.org/blog_index.html"><i class="fa fa-th-list"></i><span class="icon-label">Blog</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+
+    <section id="content" class="body">
+        <h1 class="entry-title">Download wallabag</h1>
+        
+        <div class="entry-content">
+            <ul>
+<li>Last version: <strong>2.0.4</strong> (2016/05/07).</li>
+<li><a href="https://www.wallabag.org/blog/2016/05/07/wallabag-204">Blog post about this version</a></li>
+<li><a href="https://www.wallabag.org/pages/support.html">Need help about installation?</a></li>
+<li><a href="http://doc.wallabag.org/en/master/user/migration.html">Need to update from wallabag v1?</a></li>
+<li><a href="https://github.com/wallabag/wallabag"><i class="fa fa-github fa-lg"></i> Source code</a></li>
+</ul>
+<h2>Installation on a dedicated web server (recommended way)</h2>
+<p>If you don't have it yet, please <a href="https://getcomposer.org/download/">install composer</a> and git.<br />
+Then you can install wallabag by executing the following commands:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/wallabag/wallabag.git
+cd wallabag
+git checkout 2.0.4
+SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+php bin/console wallabag:install --env=prod
+</pre></div>
+
+
+<p><a href="http://doc.wallabag.org/en/master/user/installation.html#installing-on-apache">Read this documentation to create your virtual host</a>.</p>
+<h3>Upgrade</h3>
+<p>In your wallabag folder, execute these commands:</p>
+<div class="highlight"><pre><span></span>git fetch origin
+git fetch --tags
+git checkout 2.0.4
+SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+php bin/console cache:clear --env=prod
+</pre></div>
+
+
+<h2>Installation via Docker</h2>
+<p>You can find our official repository <a href="https://hub.docker.com/r/wallabag/wallabag/">on Docker hub</a>.</p>
+<h2>Installation on a shared hosting</h2>
+<p>We provide you a package with all dependancies inside.<br />
+The default configuration uses SQLite for the database. If you want to change these settings, please edit <code>app/config/parameters.yml</code>.</p>
+<p>We already created a user: login and password are <code>wallabag</code>.</p>
+<div class="alert alert-warning">
+<p><p>With this package, wallabag don't check mandatory extensions used in the application (theses checks are made during <code>composer install</code> when you have a dedicated web server, see above).<br />
+<strong><a href="http://doc.wallabag.org/en/master/user/installation.html">Please read our installation documentation to see requirements</a></strong>.</p></p>
+</div>
+<p>Execute this command to download and extract the latest package: </p>
+<div class="highlight"><pre><span></span>wget http://wllbg.org/latest-v2-package &amp;&amp; tar xvf latest-v2-package
+</pre></div>
+
+
+<p><small>(md5 hash of the package: <code>26f79f80dfd8d8b30f3573b5251058ce</code>)</small></p>
+<p>Now, <a href="http://doc.wallabag.org/en/master/user/installation.html#installing-on-apache">read this documentation to create your virtual host</a>, then access to your wallabag.<br />
+If you changed the database configuration to use MySQL or PostgreSQL, you need to create a user via this command <code>php bin/console wallabag:install --env=prod</code>.</p>
+<h3>Upgrade</h3>
+<p>Backup your <code>app/config/parameters.yml</code> file. Extract the archive in your wallabag folder and replace <code>app/config/parameters.yml</code> with yours.<br />
+If you use SQLite, you must also copy your <code>data/</code> folder inside the new installation.</p>
+<p>Please empty <code>var/cache</code> folder.</p>
+<h2>wallabag 1</h2>
+<ul>
+<li>Last version: <strong>1.9.2</strong> (2016/04/18).</li>
+<li><a href="https://www.wallabag.org/blog/2016/04/18/wallabag-192">Blog post about this version</a></li>
+<li><a href="https://www.wallabag.org/pages/support.html">Need help about installation?</a></li>
+<li><a href="https://github.com/wallabag/wallabag/tree/master"><i class="fa fa-github fa-lg"></i> Source code</a></li>
+</ul>
+<div class="highlight"><pre><span></span>wget http://wllbg.org/latest &amp;&amp; unzip latest
+</pre></div>
+
+
+<p><small>(md5 hash of the package: <code>c54ac594b03ce2026cf1f671391033e3</code>)</small></p>
+<h2>Third-party applications</h2>
+<div class="col-lg-12">
+<p><div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-firefox fa-lg"></i> <strong><a href="https://addons.mozilla.org/firefox/addon/wallabag-v2/">Firefox</a></strong><br />
+          <small>for wallabag v2 only</small>
+        </div>
+        <div class="panel-footer">Developed by Thibaud Dauce.<br />
+<em><a href="https://github.com/ThibaudDauce/wallabag-firefox">source code</a></em></div>
+      </div>
+  </div>
+  <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-firefox fa-lg"></i> <strong><a href="https://addons.mozilla.org/firefox/addon/wallabag/">Firefox</a></strong><br />
+          <small>for wallabag v1 only</small>
+        </div>
+        <div class="panel-footer">Developed by Jonathan Gaulupeau.<br />
+<em><a href="https://github.com/wallabag/firefox-ext">source code</a></em></div>
+      </div>
+  </div>
+  <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-chrome fa-lg"></i> <strong><a href="https://chrome.google.com/webstore/detail/wallabag/bepdcjnnkglfjehplaogpoonpffbdcdj">Chrome</a></strong>
+        </div>
+        <div class="panel-footer">Developed by Jonathan Gaulupeau.<br />
+<em><a href="https://github.com/wallabag/chrome-ext">source code</a></em></div>
+      </div>
+  </div></p>
+</div>
+<div class="col-lg-12">
+<p><div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-firefox fa-lg"></i> <strong><a href="https://github.com/wallabag/wallabag-fxos">Firefox OS</a></strong>
+        </div>
+        <div class="panel-footer">Developed by freddyb.<br />
+<em><a href="https://github.com/wallabag/wallabag-fxos">source code</a></em></div>
+      </div>
+  </div>
+  <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-android fa-lg"></i> <strong>Android</strong><br />
+          <small><a href="https://play.google.com/store/apps/details?id=fr.gaulupeau.apps.InThePoche">Google Play Store</a> or <a href="https://f-droid.org/app/fr.gaulupeau.apps.InThePoche">F-droid</a></small>
+        </div>
+        <div class="panel-footer">Developed by Jonathan Gaulupeau.<br />
+<em><a href="https://github.com/wallabag/android-app">source code</a></em></div>
+      </div>
+  </div>
+  <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-windows fa-lg"></i> <strong><a href="http://apps.microsoft.com/windows/app/wallabag/f551b9c4-7346-4509-ae46-c6167c705a30">Windows Phone</a></strong><br />
+          <small>for wallabag v2 only</small>
+        </div>
+        <div class="panel-footer">Developed by Julian Oster.<br />
+<em><a href="https://github.com/wallabag/windows-app">source code</a></em></div>
+      </div>
+  </div></p>
+</div>
+<div class="col-lg-12">
+<p><div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-windows fa-lg"></i> <strong><a href="http://apps.microsoft.com/windows/app/wallabag/f551b9c4-7346-4509-ae46-c6167c705a30">Windows Phone</a></strong><br />
+          <small>for wallabag v1 only</small>
+        </div>
+        <div class="panel-footer">Developed by Julian Oster.<br />
+<em><a href="https://github.com/wallabag/windows-app/tree/master">source code</a></em></div>
+      </div>
+  </div>
+  <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <i class="fa fa-apple fa-lg"></i> <strong><a href="https://itunes.apple.com/app/wallabag/id828331015?mt=8">iPhone</a></strong><br />
+        </div>
+        <div class="panel-footer">Developed by Kevin Meyer.<br />
+<em><a href="https://github.com/wallabag/ios-app">source code</a></em></div>
+      </div>
+  </div></p>
+</div>
+        </div>
+    </section>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-pencil fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/05/07/wallabag-204">
+                            [Release] wallabag 2.0.4
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/04/22/wallabag-203">
+                            [Release] wallabag 2.0.3
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.wallabag.org/blog/2016/04/21/wallabag-202">
+                            [Release] wallabag 2.0.2
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        <li class="list-group-item"><h4><i class="fa fa-envelope fa-lg"></i><span class="icon-label">Follow us</span></h4>
+            <ul class="list-group" id="followus">
+                <li class="list-group-item">
+                    <i class="fa fa-github fa-lg"></i> <a href="https://github.com/wallabag/wallabag">GitHub</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-twitter fa-lg"></i> <a href="https://twitter.com/wallabagapp">Twitter</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-comment fa-lg"></i> <a href="https://framasphere.org/u/wallabag">diaspora*</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-facebook fa-lg"></i> <a href="https://facebook.com/wallabag">Facebook</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-google-plus fa-lg"></i> <a href="https://plus.google.com/+WallabagOrg">Google+</a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-rss fa-lg"></i> <a href="https://www.wallabag.org/feeds/all.atom.xml">RSS</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+          <div class="col-xs-10">wallabag is made by <a href="http://www.loeuillet.org">Nicolas Lœuillet</a>, Thomas Citharel, Jérémy Benoist and many <a href="https://github.com/wallabag/wallabag/graphs/contributors">great contributors</a>.
+             <p><small>This website is powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> and  <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>. You can contribute to it on <a href="https://github.com/wallabag/wallabag.org">github.com/wallabag/wallabag.org</a>.</small></p>          </div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.wallabag.org/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.wallabag.org/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.wallabag.org/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
